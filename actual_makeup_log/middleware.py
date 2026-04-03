@@ -11,10 +11,11 @@ class SeleniumMiddleWare(object):
     def process_request(self, request, spider):
         self.driver.get(request.url)
         content = self.driver.page_source
-        self.driver.quit()
-
-        return HtmlResponse(request.url, encoding='utf-8', body=content, request=request)
+        return HtmlResponse(request.url, encoding='utf-8',
+                        body=content, request=request)
 
     def process_response(self, request, response, spider):
         return response
         
+    def spider_closed(self, spider):
+        self.driver.quit()

@@ -1,3 +1,3 @@
 DOWNLOADER_MIDDLEWARES = {
-    'bid_spiders.middlewares.SeleniumMiddleWare': 491
+    'actual_makeup_log.middlewares.SeleniumMiddleWare': 491
 }
